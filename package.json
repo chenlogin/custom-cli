@@ -1,0 +1,30 @@
+{
+  "name": "custom-cli",
+  "version": "1.0.0",
+  "description": "创建一个 CLI 工具",
+  "main": "index.js",
+  "files": [
+    "src",
+    "dist",
+    "types/*.d.ts"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [
+    "CLI"
+  ],
+  "bin": {
+    "custom-cli": "./index.js"
+  },
+  "author": "meng",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "clear": "^0.1.0",
+    "commander": "^8.3.0",
+    "figlet": "^1.5.2",
+    "inquirer": "^8.2.0"
+  }
+}

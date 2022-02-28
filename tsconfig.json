@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "target": "es6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
+    "noImplicitAny": false,
+    "strict": true,
+    "allowJs": true,
+    "declaration": true, //Generates corresponding d.ts files.
+    "declarationDir": "dist",
+    "outDir": "dist",
+    "sourceRoot": "dist",
+    // "importHelpers": true,
+    "lib": [
+      "dom",
+      "es2017",
+    ]
+  },
+  "include": [
+    "src/*.ts",
+  ],
+}
