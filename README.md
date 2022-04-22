@@ -1,7 +1,6 @@
-# custom-cli
-
+# simple-cli
 ## package.json 字段说明
-- main, 指定了加载的入口文件，require('moduleName')就会加载这个文件。这个字段的默认值是模块根目录下面的index.js
+- main, 指定了加载的入口文件，require('moduleName')就会加载这个文件。默认值是模块根目录下面的index.js
 - scripts, 指定了运行脚本命令的npm命令行缩写
 - files, 当你发布package时，具体那些文件会发布上去
 - bin, 项用来指定各个内部命令对应的可执行文件的位置

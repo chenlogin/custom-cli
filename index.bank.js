@@ -1,9 +1,7 @@
 const chalk = require('chalk');
 const clear = require('clear');
 const figlet = require('figlet');
-const program = require('commander');
-const path = require('path');
-const fs = require('fs')
+const { Command } = require('commander');
 
 const inquirer = require('./lib/inquirer');
 const packageJson = require('./package.json');
@@ -11,20 +9,38 @@ const packageJson = require('./package.json');
 // 清除控制台
 clear();
 
+const runInputName = async () => {
+  const values = await inquirer.askCreateAppName();
+  console.log(values);
+  let appName = values.name;
+  console.log(chalk.yellow(`Begin create app: ${appName}`))
+};
+
+const program = new Command();
 program
   .version(packageJson.version,'-v, --version')
+  .usage('<commnad [options]>');
 
+// 可选参数
+program
+.option('-d, --debug', 'crate a app project');
+
+//判断是否为最新版本
+//const execSync = require("child_process").execSync;
+//const lts = execSync(`npm view ${pkgName} version --json --registry=https://registry.npm.taobao.org`) + '' // buffer 转 string
+
+// create 命令
 program
     .command('create <app-name>')
     .description('crate a new project')
     .option('-f, --force', 'Overwrite target directory if it exists')
     .action(appname => {
-      const dir = path.join(__dirname); 
-      if (fs.readdirSync(dir).includes(appname)) {
-        console.log(chalk.red(`${appname}目录已存在`))
-        process.exit(1);
-      }
-      console.log(chalk.blue(appname))
+        
+        // if (fs.readdirSync('.').includes(input)) {
+        //   return '目录已存在'
+        // }
+        // 输入的 appname
+        console.log(appname)
     })
 // 配置 config 命令
 program
@@ -37,11 +53,12 @@ program
     console.log(value, options)
   })
 
+
 // 触发 --help 后打印一些信息
 program.on('--help', () => {
   console.log();
-  console.log(`create by ${chalk.cyan('cm')} `);
-  console.log(`more click ${chalk.red('https://github.com/chenlogin/custom-cli')}`)
+  console.log(`  create by ${chalk.cyan('cm')} `);
+  console.log(`  more click ${chalk.red('https://github.com/chenlogin/custom-cli')}`)
   console.log();
 });
 
@@ -50,8 +67,14 @@ program.commands.forEach(c => c.on('--help', () => console.log()));
 // 解析参数
 program.parse(process.argv);
 
+
+console.log("解析参数：",process.argv)
+console.log("当前目录：",process.cwd())
 // 无任何命令时输出帮助信息
 if (!process.argv.slice(2).length) {
-    //只展示帮助信息，不退出程序
     program.outputHelp();
-};
+}
+
+
+
+

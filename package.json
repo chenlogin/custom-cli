@@ -1,5 +1,5 @@
 {
-  "name": "custom-cli",
+  "name": "cm-custom-cli",
   "version": "1.0.0",
   "description": "创建一个 CLI 工具",
   "main": "index.js",
@@ -13,18 +13,24 @@
     "build": "tsc"
   },
   "keywords": [
-    "CLI"
+    "CLI",
+    "脚手架"
   ],
   "bin": {
-    "custom-cli": "./index.js"
+    "cmcli": "./bin/cmcli"
   },
+  "repository": "https://github.com/chenlogin/custom-cli",
   "author": "meng",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.0",
     "clear": "^0.1.0",
     "commander": "^8.3.0",
+    "ejs": "^3.1.6",
     "figlet": "^1.5.2",
     "inquirer": "^8.2.0"
+  },
+  "devDependencies": {
+    "plop": "^3.0.5"
   }
 }
