@@ -9,8 +9,10 @@
     "types/*.d.ts"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "tsc",
+    "create": "node ./bin/cmcli create newproject",
+    "dev:create": "node index.js create newproject",
+    "dev:ejs": "node demo/ejs/cli.js"
   },
   "keywords": [
     "CLI",
@@ -26,11 +28,23 @@
     "chalk": "^4.1.0",
     "clear": "^0.1.0",
     "commander": "^8.3.0",
+    "cross-spawn": "^7.0.3",
+    "deepmerge": "^4.2.2",
     "ejs": "^3.1.6",
+    "execa": "^5.0.0",
     "figlet": "^1.5.2",
-    "inquirer": "^8.2.0"
+    "fs-extra": "^10.1.0",
+    "globby": "^11.1.0",
+    "inquirer": "^8.2.0",
+    "isbinaryfile": "^5.0.0",
+    "javascript-stringify": "^2.1.0",
+    "slash": "^3.0.0",
+    "vue-codemod": "^0.0.5"
   },
   "devDependencies": {
-    "plop": "^3.0.5"
+    "plop": "^3.0.5",
+    "vue": "^3.2.40",
+    "vue-router": "^4.1.5",
+    "vuex": "^4.0.2"
   }
 }

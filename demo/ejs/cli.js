@@ -9,7 +9,7 @@ inquirer.prompt([
   {
     type: 'input', //type：input,confirm,list,rawlist,checkbox,password...
     name: 'name', // key 名
-    message: 'Your name', // 提示信息
+    message: 'Your page name', // 提示信息
     default: 'my-node-cli' // 默认值
   }
 ]).then(answers => {
@@ -28,9 +28,7 @@ inquirer.prompt([
         
         if (!fs.existsSync(path.join(cwdUrl, 'demo/ejs/dist'))) {
           fs.mkdir(path.join(cwdUrl, 'demo/ejs/dist'),function(err){
-
               if (err) {
-          
                   return console.error(err);
               }
               console.log("目录创建成功。");

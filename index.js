@@ -1,11 +1,10 @@
+const path = require('path');
+const fs = require('fs');
 const chalk = require('chalk');
 const clear = require('clear');
-const figlet = require('figlet');
 const program = require('commander');
-const path = require('path');
-const fs = require('fs')
 
-const inquirer = require('./lib/inquirer');
+const create = require('./lib/create');
 const packageJson = require('./package.json');
 
 // 清除控制台
@@ -18,13 +17,16 @@ program
     .command('create <app-name>')
     .description('crate a new project')
     .option('-f, --force', 'Overwrite target directory if it exists')
-    .action(appname => {
+    .action((appname, options) => {
+
       const dir = path.join(__dirname); 
-      if (fs.readdirSync(dir).includes(appname)) {
+      if (fs.readdirSync(dir).includes(appname) && !options.force) {
+
         console.log(chalk.red(`${appname}目录已存在`))
         process.exit(1);
       }
-      console.log(chalk.blue(appname))
+      
+      create(appname);
     })
 // 配置 config 命令
 program

@@ -3,7 +3,7 @@ const clear = require('clear');
 const figlet = require('figlet');
 const { Command } = require('commander');
 
-const inquirer = require('./lib/inquirer');
+const inquirer = require('inquirer');
 const packageJson = require('./package.json');
 
 // 清除控制台
@@ -24,10 +24,6 @@ program
 // 可选参数
 program
 .option('-d, --debug', 'crate a app project');
-
-//判断是否为最新版本
-//const execSync = require("child_process").execSync;
-//const lts = execSync(`npm view ${pkgName} version --json --registry=https://registry.npm.taobao.org`) + '' // buffer 转 string
 
 // create 命令
 program
@@ -52,7 +48,6 @@ program
   .action((value, options) => {
     console.log(value, options)
   })
-
 
 // 触发 --help 后打印一些信息
 program.on('--help', () => {

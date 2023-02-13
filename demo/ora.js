@@ -1,5 +1,5 @@
 //ora 命令行 loading 动效
-
+const ora = require('ora');
 // 自定义文本信息
 const message = 'Loading unicorns'
 // 初始化
@@ -10,9 +10,7 @@ spinner.start();
 setTimeout(() => {
     // 修改动画样式
 
-    // Type: string
-    // Default: 'cyan'
-    // Values: 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white' | 'gray'
+    // 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white' | 'gray'
     spinner.color = 'red';    
     spinner.text = 'Loading rainbows';
 

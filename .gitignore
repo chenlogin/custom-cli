@@ -1,5 +1,4 @@
 .idea
-.vscode
 .settings
 node_modules
 typings
