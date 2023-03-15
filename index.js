@@ -18,17 +18,15 @@ program
     .description('crate a new project')
     .option('-f, --force', 'Overwrite target directory if it exists')
     .action((appname, options) => {
-
-      const dir = path.join(__dirname); 
+      const dir = process.cwd();
       if (fs.readdirSync(dir).includes(appname) && !options.force) {
 
         console.log(chalk.red(`${appname}目录已存在`))
         process.exit(1);
       }
-      
       create(appname);
     })
-// 配置 config 命令
+// 配置 config
 program
   .command('config [value]')
   .description('inspect and modify the config')
@@ -42,8 +40,8 @@ program
 // 触发 --help 后打印一些信息
 program.on('--help', () => {
   console.log();
-  console.log(`create by ${chalk.cyan('cm')} `);
-  console.log(`more click ${chalk.red('https://github.com/chenlogin/custom-cli')}`)
+  console.log(`create by ${chalk.cyan('CMCLI')} `);
+  console.log(`more info click ${chalk.red('https://github.com/chenlogin/custom-cli')}`)
   console.log();
 });
 

@@ -1,29 +1,36 @@
 {
-  "name": "cm-custom-cli",
-  "version": "1.0.0",
-  "description": "创建一个 CLI 工具",
+  "name": "@cm/mini-cli",
+  "private": false,
+  "version": "0.1.2",
+  "description": "脚手架工具",
   "main": "index.js",
-  "files": [
-    "src",
-    "dist",
-    "types/*.d.ts"
-  ],
-  "scripts": {
-    "build": "tsc",
-    "create": "node ./bin/cmcli create newproject",
-    "dev:create": "node index.js create newproject",
-    "dev:ejs": "node demo/ejs/cli.js"
-  },
-  "keywords": [
-    "CLI",
-    "脚手架"
-  ],
+  "author": "meng",
+  "license": "ISC",
   "bin": {
     "cmcli": "./bin/cmcli"
   },
-  "repository": "https://github.com/chenlogin/custom-cli",
-  "author": "meng",
-  "license": "ISC",
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "scripts": {
+    "dev": "node index.js create cliProject -f",
+    "build": "tsc"
+  },
+  "keywords": [
+    "mini-cli"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chenlogin/custom-cli"
+  },
+  "bugs": {
+    "url": "https://github.com/chenlogin/custom-cli/issues"
+  },
+  "homepage": "https://github.com/chenlogin/custom-cli#readme",
   "dependencies": {
     "chalk": "^4.1.0",
     "clear": "^0.1.0",

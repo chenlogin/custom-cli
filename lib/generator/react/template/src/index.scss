@@ -1,0 +1,67 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: auto;
+  min-height: 100%;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  font-family: sans-serif;
+}
+
+.sider {
+  background-color: #f7f7f7;
+  bottom: 0;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  overflow: auto;
+  padding-left: 0;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  width: 230px;
+}
+
+.sider li {
+  margin: 0;
+  padding: 0;
+}
+
+.sider a {
+  color: rgb(108 108 191);
+  display: block;
+  padding: 10px 10px 5px 30px;
+  text-decoration: none;
+}
+
+.sider a.active {
+  color: #00f;
+}
+
+.sider a:hover {
+  background-color: #eee;
+}
+
+.page-container {
+  padding: 30px;
+  padding-left: 260px;
+  text-align: left;
+}
+
+.ab {
+  color: #00f;
+  text-emphasis: none;
+}

@@ -52,8 +52,8 @@ program
 // 触发 --help 后打印一些信息
 program.on('--help', () => {
   console.log();
-  console.log(`  create by ${chalk.cyan('cm')} `);
-  console.log(`  more click ${chalk.red('https://github.com/chenlogin/custom-cli')}`)
+  console.log(`create by ${chalk.cyan('cm')}`);
+  console.log(`more click ${chalk.red('https://github.com/chenlogin/custom-cli')}`)
   console.log();
 });
 
